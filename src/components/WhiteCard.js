@@ -1,4 +1,4 @@
-import './WhiteCard.css'
+import './styles/WhiteCard.scss'
 
 import ReactSpeedometer from "react-d3-speedometer"
 
@@ -6,9 +6,17 @@ import ReactSpeedometer from "react-d3-speedometer"
 
 const WhiteCard = (props)=>{
 
-    
-        
-
+  const cols = {
+  
+  "Humidity": "Humidity",
+  "Lat":"Lattitude",
+  "Lon": "Longitude",
+  "PM10_0": "PM 10",
+  "PM1_0": "PM 1",
+  "PM2_5": "PM 25",
+  "Pressure": "Pressure",
+  "Temperature": "Temperature"
+  }
 
 
     return (
@@ -31,82 +39,14 @@ const WhiteCard = (props)=>{
             needleColor="white"
             startColor="green"
             segments={10}
-            endColor="red" 
-            customSegmentLabels={[
-                {
-                  text: "Very Bad",
-                  position: "INSIDE",
-                  color: "#555",
-                  fontSize:"5px"
-                },
-                {
-                  text: "Bad",
-                  position: "INSIDE",
-                  color: "#555",
-                  fontSize:"5px"
-                },
-                {
-                  text: "Ok",
-                  position: "INSIDE",
-                  color: "#555",
-                  fontSize: "19px",
-                  fontSize:"5px"
-                },
-                {
-                  text: "Good",
-                  position: "INSIDE",
-                  color: "#555",
-                  fontSize:"5px"
-                },
-                {
-                  text: "Very Good",
-                  position: "INSIDE",
-                  color: "#555",
-                  fontSize:"5px"
-                },
-                {
-                    text: "Very Bad",
-                    position: "INSIDE",
-                    color: "#555",
-                    fontSize:"5px"
-                  },
-                  {
-                    text: "Bad",
-                    position: "INSIDE",
-                    color: "#555",
-                    fontSize:"5px"
-                  },
-                  {
-                    text: "Ok",
-                    position: "INSIDE",
-                    color: "#555",
-                    fontSize:"5px"
-                  },
-                  {
-                    text: "Good",
-                    position: "INSIDE",
-                    color: "#555",
-                    fontSize:"5px"
-                  },
-                  {
-                    text: "Very Good",
-                    position: "INSIDE",
-                    color: "#555",
-                    fontSize:"5px"
-                  },
-
-              ]}
-            
-            
-            
-            
+            endColor="red"     
             />
             </div>
             <div className="data col-lg-6 col-sm-12 col-xs-12">
             
             <div className="row">
 
-              {Object.keys(props.data).map((key,index)=>(<div className="col-lg-4 col-sm-2">{key}:  {props.data[key]}</div>))}
+              {Object.keys(cols).map((key,index)=>(<div className="each-data">{cols[key]}<br />  {props.data[key]}</div>))}
               </div>
             </div>
         </div>

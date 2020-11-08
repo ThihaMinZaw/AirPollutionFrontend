@@ -1,4 +1,4 @@
-import './Navbar.css'
+import './styles/Navbar.scss'
 
 import {Navbar,Nav} from 'react-bootstrap'
 

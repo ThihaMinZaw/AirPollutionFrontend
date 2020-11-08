@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 
-import './SlideShow.css'
+import './styles/SlideShow.scss'
 
 import WhiteCard from './WhiteCard'
 

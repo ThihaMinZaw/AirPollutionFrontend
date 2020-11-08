@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
+html{
+
+
+  font-size:10px;
+
+ @media(min-width:569px){
+   font-size:8px;
+ }
+
+  @media (min-width: 800px) {
+    font-size: 10px;
+  }
+ 
+  @media (min-width:1400px){
+    font-size:10px;
+  }
+  @media(min-width:1600px){
+    font-size:14px; 
+  }
+}
+
+
 body {
 
   background: rgb(171,41,41);
