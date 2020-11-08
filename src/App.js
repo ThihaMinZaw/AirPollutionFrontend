@@ -7,6 +7,8 @@ import NavbarReact from './components/Navbar'
 
 import SlideShow from './components/SlideShow'
 
+import Footer from './components/Footer'
+
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
      <NavbarReact />
      
      <SlideShow />
+     
 
+    <Footer />
 
    </div>
 

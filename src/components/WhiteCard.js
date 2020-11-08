@@ -31,7 +31,8 @@ const WhiteCard = (props)=>{
         <div className="container speedometer col-lg-6 col-sm-12 col-xs-12">
         <ReactSpeedometer
             
-            height={200}  
+            width={250}
+            height={200}
             maxValue={500}
             
             value={props.data.AQI}

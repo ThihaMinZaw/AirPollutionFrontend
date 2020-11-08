@@ -1,0 +1,22 @@
+.footer{
+    
+    position: absolute;
+    bottom:0;
+  
+    background-color:#343A40;
+    height:5%;
+    width:100%;
+    padding-top:10px;
+    div{
+        
+       display:flex;
+        justify-content: center;
+        
+        color: rgb(171,41,41);
+        color: linear-gradient(90deg, rgba(171,41,41,1) 0%, rgba(44,2,38,1) 100%);
+        
+        
+       
+    }
+    
+}
