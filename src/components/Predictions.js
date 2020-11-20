@@ -34,7 +34,7 @@ const Predictions = ()=>{
         <h2>
             AQI Prediction
         </h2>
-        <p>Air pollution prediction is crucial because if we know there is tommorrow's air quality,  we can avoid predictable dangers. So, Air pollution prediction can save a lot of people's health</p>
+        <p>What a time to be alive!. As human's knowledge on machine learning and data analytics areas has been hugely expanding, we use these tools to build a data model which can predict tommorow's AQI. Unfortunately, our model can only predict only for two regions, Yangon and Mandalay. We promise we'll work on new regions too. Thank you.</p>
         </div>
         
         <div className="content row">
@@ -42,7 +42,7 @@ const Predictions = ()=>{
             <div className="col-md-6"><Cal /></div>
             <div className="col-md-6 predict-des">
                 <h5>Machine Learning Model</h5>
-                <p>Air prediction model is created using XGBoost Regressor because it resulted the best performances and the least error compared to other prediction models.
+                <p>This model is created using XGBoost Regressor which has the highest performances for current dataset compare to the others.
 
                 </p>
 
