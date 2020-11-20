@@ -1,7 +1,7 @@
 @use 'bootstrap/scss/_carousel.scss';
 
 .weather{
-    // background-color:#48484A;
+    
     h6{
         font-size:0.8rem;
     }
@@ -15,9 +15,10 @@
     
 }
 .home-header{
- 
+    width:100%;
+    // background-color: black;
     
-    padding:100px;
+    padding:50px;
     font-size:20px;
     // background-color: white;
     img{
