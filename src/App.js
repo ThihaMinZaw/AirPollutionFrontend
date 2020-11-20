@@ -28,9 +28,9 @@ function App() {
 
    
      <Switch>
-        <Route exact path="/analysis" component={Analysis} />
+        {/* <Route exact path="/analysis" component={Analysis} /> */}
         <Route exact path="/predictions" component={Predictions} />
-        <Route exact path="/references" component={References} />
+        {/* <Route exact path="/references" component={References} /> */}
        <Route exact path="/home" component={SlideShow} />
        <Route path="/" component={SlideShow} />
        

@@ -6,6 +6,8 @@ import axios from 'axios'
 
 import Cal from '../components/InnerComponents/Calender/Cal'
 
+import { Chart, LineAdvance,Geom, Axis, Tooltip, Coord, Label, Legend, View, Guide, Shape, Facet ,Coordinate,Interval} from 'bizcharts'
+
 
 const Predictions = ()=>{
 
@@ -16,8 +18,12 @@ const Predictions = ()=>{
             url:"https://myanmarairpollution.herokuapp.com/api/v1/predict",
             method:"GET"
         }).then((result)=>{
-            console.log(result.data)
-            setPredict(result.data)
+
+            console.log("Showing predict data")
+
+            console.log(result.data);
+
+            setPredict(result.data);
         }).catch(err=>console.log(err))
     },[])
 
@@ -26,10 +32,9 @@ const Predictions = ()=>{
         <div className="container">
         <div className="predict-header">
         <h2>
-            This is the prediction page
+            AQI Prediction
         </h2>
-        <p>This is our prediciton page. We predict the tommorow possible AQI value by putting in some shit.This is our prediciton page. We predict the tommorow possible AQI value by putting in some shit.This is our prediciton page. We predict the tommorow possible AQI value by putting in some shit</p>
-
+        <p>Air pollution prediction is crucial because if we know there is tommorrow's air quality,  we can avoid predictable dangers. So, Air pollution prediction can save a lot of people's health</p>
         </div>
         
         <div className="content row">
@@ -37,8 +42,10 @@ const Predictions = ()=>{
             <div className="col-md-6"><Cal /></div>
             <div className="col-md-6 predict-des">
                 <h5>Machine Learning Model</h5>
-                <p>We use our stupid machine learning model to predict some shit</p>
-<h6>Tommorow's AQI data for some places in Yangon:</h6>
+                <p>Air prediction model is created using XGBoost Regressor because it resulted the best performances and the least error compared to other prediction models</p>
+<h6>Tommorow's AQI data:</h6>
+{predict.map(place=>(<div>{place.Label}:{place.AQI} AQI</div>))}
+
 
             </div>
             

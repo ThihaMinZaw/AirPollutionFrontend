@@ -95,7 +95,8 @@ const GraphsGallery = (props)=>{
         <div className="container">
         <div className="welcome-text">
         <h1>Welcome to our Myanmar AirPollution Analysis Website</h1>
-        <p>This is our AirPollution analysis website.This is our AirPollution analysis website.This is our AirPollution analysis website.This is our AirPollution analysis website.This is our AirPollution analysis website.</p>
+        <p>Welcome to our Myanmar AirPollution Analysis Website
+This is our Air pollution analysis which was initalized to increase the awareness of Myanmar people in air quality. We provide the visualization of air quality for specific places in Myanmar. Moreover, these data can be applied in different places for different purposes so We hope that it will help the Myanamr society in learning or developments related to air quality. We also predict the tomorrow's air quality to avoid from going outside at the dangerous times.</p>
         </div>
 
 
@@ -168,7 +169,7 @@ const GraphsGallery = (props)=>{
             <div className="col-md-6">
                 <div className="right-graph-description">
         <h1>AirPollution in Mandalay</h1>
-        <p> AirPollution in mandalay has been a rising problem since decades.AirPollution in mandalay has been a rising problem since decades.AirPollution in mandalay has been a rising problem since decades.</p>
+        <p>This is the air quality visualization of Mandalay.. It shows the AQI historical data.  As Mandalay is one of the populated city in Myanmar, air quality is the worst all the time. We can see that AQI rose up to 160 sometimes.  But recently, air quality become good because people are staying at home during Covid.</p>
     </div>
             </div>
         </div>
@@ -179,7 +180,7 @@ const GraphsGallery = (props)=>{
             <div className="col-md-6">
                 <div className="left-graph-description">
         <h1>AirPollution in Yangon</h1>
-        <p> AirPollution in Yangon has been a rising problem since decades.AirPollution in mandalay has been a rising problem since decades.AirPollution in mandalay has been a rising problem since decades.</p>
+        <p> This is the air quality visualization of Yangon.. As Yangon has most of the industries in Myanmar, air quality can rise pretty high. Maximum aqy has been 153.72.</p>
     </div>
             </div>
             <div className="col-md-6">
