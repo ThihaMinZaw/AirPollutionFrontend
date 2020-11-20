@@ -42,7 +42,10 @@ const Predictions = ()=>{
             <div className="col-md-6"><Cal /></div>
             <div className="col-md-6 predict-des">
                 <h5>Machine Learning Model</h5>
-                <p>Air prediction model is created using XGBoost Regressor because it resulted the best performances and the least error compared to other prediction models</p>
+                <p>Air prediction model is created using XGBoost Regressor because it resulted the best performances and the least error compared to other prediction models.
+
+                </p>
+
 <h6>Tommorow's AQI data:</h6>
 {predict.map(place=>(<div>{place.Label}:{place.AQI} AQI</div>))}
 

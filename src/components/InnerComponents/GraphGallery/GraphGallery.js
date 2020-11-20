@@ -32,7 +32,7 @@ const GraphsGallery = (props)=>{
             url:"https://myanmarairpollution.herokuapp.com/api/v1/aqi_monthly"
           }).then(result=>{
              
-
+                console.log(result.data)
               //reformatting data into aqy by month
               const [yangonData,mandalayData] =reformatByMonth(result.data);
 
@@ -61,7 +61,8 @@ const GraphsGallery = (props)=>{
              for(let date in data_json['Mandalay'][month]){
                 
                 let AQI = data_json['Mandalay'][month][date].AQI;
-                temp_mandalay.push({AQI:AQI,date:date,city:"Mandalay"});
+                let covid = data_json['Mandalay'][month][date].NEW;
+                temp_mandalay.push({AQI:AQI,date:date,city:"Mandalay",covid:covid});
 
             }
           }
@@ -72,7 +73,8 @@ const GraphsGallery = (props)=>{
             for(let date in data_json['Yangon'][month]){
                
                let AQI = data_json['Yangon'][month][date].AQI;
-               temp_yangon.push({AQI:AQI,date:date,city:"Yangon"});
+               let covid = data_json['Yangon'][month][date].NEW;
+               temp_yangon.push({AQI:AQI,date:date,city:"Yangon",covid:covid});
 
            }
          }
@@ -98,7 +100,10 @@ const GraphsGallery = (props)=>{
         <p>Welcome to our Myanmar AirPollution Analysis Website
 This is our Air pollution analysis which was initalized to increase the awareness of Myanmar people in air quality. We provide the visualization of air quality for specific places in Myanmar. Moreover, these data can be applied in different places for different purposes so We hope that it will help the Myanamr society in learning or developments related to air quality. We also predict the tomorrow's air quality to avoid from going outside at the dangerous times.</p>
         </div>
-
+    <div className="row">
+        <div className="col-md-12"><img src="/ygn.png" ></img></div>
+        <div className="col-md-12"><img src="/mdy.png" ></img></div>
+    </div>
 
         <div className="row">
             <div className="col-md-6">
@@ -113,7 +118,7 @@ This is our Air pollution analysis which was initalized to increase the awarenes
 			shape="smooth"
 			point
 			area
-			position="date*AQI"
+            position="date*AQI"
             color={['AQI', (AQI) => {
 
                if(AQI>0 && AQI<50)
@@ -163,9 +168,71 @@ This is our Air pollution analysis which was initalized to increase the awarenes
 	    
        
 	</Chart>
+    <Chart padding={[10, 10, 50, 50]} height={300} autoFit data={aqyByMonthMandalay} >
+
+        
+        
+		<LineAdvance
+        tooltip="covid*AQI*date"
+			shape="smooth"
+			point
+			area
+            position="AQI*covid"
+            color={['AQI', (AQI) => {
+
+               if(AQI>0 && AQI<50)
+               {
+                   return "#008000"
+               }
+               else if(AQI>=50 && AQI<100)
+               {
+                   return "#1C8D00"
+               }
+               else if(AQI>=100 && AQI<150)
+               {
+                   return "#3D9900"
+               }
+               else if(AQI>=150 && AQI<200)
+               {
+                   return "#64A600"
+               }
+               else if(AQI>=200 && AQI<250)
+               {
+                   return "#8FB300"
+               }
+               else{
+                   return "red"
+               }           
+            
+            }
+                
+                ]}     
+        
+        />
+
+        {/* <Axis name="AQI" title={{
+		 autoRotate: true, 
+		 offset: 40, 
+		 textStyle: {
+			 fontSize: '12',
+			 textAlign: 'center',
+			 fill: '#999',
+			//  fontWeight: 'bold',
+		 },
+		 position: 'center', 
+	 }} />
+       
+       <Axis name="date" label="DATE" /> */}
+      
+	    
+       
+	</Chart>
+    
     
     </div>
+    
             </div>
+            
             <div className="col-md-6">
                 <div className="right-graph-description">
         <h1>AirPollution in Mandalay</h1>
@@ -176,6 +243,7 @@ This is our Air pollution analysis which was initalized to increase the awarenes
 
 
         <div className="row">
+            
            
             <div className="col-md-6">
                 <div className="left-graph-description">
@@ -241,6 +309,66 @@ This is our Air pollution analysis which was initalized to increase the awarenes
 	 }} />
        
        <Axis name="date" label="DATE" />
+      
+	    
+       
+	</Chart>
+    <Chart padding={[10, 10, 50, 50]} height={300} autoFit data={aqyByMonthYangon} >
+
+        
+        
+		<LineAdvance
+        tooltip="covid*AQI*date"
+			shape="smooth"
+			point
+			area
+            position="AQI*covid"
+            color={['AQI', (AQI) => {
+
+               if(AQI>0 && AQI<50)
+               {
+                   return "#008000"
+               }
+               else if(AQI>=50 && AQI<100)
+               {
+                   return "#1C8D00"
+               }
+               else if(AQI>=100 && AQI<150)
+               {
+                   return "#3D9900"
+               }
+               else if(AQI>=150 && AQI<200)
+               {
+                   return "#64A600"
+               }
+               else if(AQI>=200 && AQI<250)
+               {
+                   return "#8FB300"
+               }
+               else{
+                   return "red"
+               }           
+            
+            }
+                
+                ]}     
+        
+        />
+        
+
+        {/* <Axis name="AQI" title={{
+		 autoRotate: true, 
+		 offset: 40, 
+		 textStyle: {
+			 fontSize: '12',
+			 textAlign: 'center',
+			 fill: '#999',
+			//  fontWeight: 'bold',
+		 },
+		 position: 'center', 
+	 }} /> */}
+       
+       {/* <Axis name="date" label="DATE" /> */}
       
 	    
        
