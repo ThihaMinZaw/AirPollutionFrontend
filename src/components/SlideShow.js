@@ -1,85 +1,90 @@
+import axios from 'axios';
+import React,{useContext,useEffect,useState} from 'react'
+
 import Carousel from 'react-bootstrap/Carousel';
 
 import './styles/SlideShow.scss'
 
 import WhiteCard from './WhiteCard'
 
-const data =[ 
-  
-  {
-  "location":"7 mile Mayangone",
-  "AQI": 96,
-  "Humidity": "67",
-  "Lat": 16.856831,
-  "Lon": 96.146523,
-  "PM10_0": "40.58",
-  "PM1_0": "22.92",
-  "PM2_5": "33.54",
-  "Pressure": "1011.2",
-  "Temperature": "91"
-  },
-  {
-      "location":"Yankin",
-      "AQI": 96,
-      "Humidity": "67",
-      "Lat": 16.856831,
-      "Lon": 96.146523,
-      "PM10_0": "40.58",
-      "PM1_0": "22.92",
-      "PM2_5": "33.54",
-      "Pressure": "1011.2",
-      "Temperature": "91"
-  },
-  {
-      "location":"8 Mile Yangon",
-      "AQI": 36,
-      "Humidity": "67",
-      "Lat": 16.856831,
-      "Lon": 96.146523,
-      "PM10_0": "40.58",
-      "PM1_0": "22.92",
-      "PM2_5": "33.54",
-      "Pressure": "1011.2",
-      "Temperature": "91"
-  },
-  {
-    "location":"Sacramento Old Town",
-    "AQI": 50,
-    "Humidity": "67",
-    "Lat": 16.856831,
-    "Lon": 96.146523,
-    "PM10_0": "40.58",
-    "PM1_0": "22.92",
-    "PM2_5": "33.54",
-    "Pressure": "1011.2",
-    "Temperature": "91"
-},
-{
-  "location":"Albany",
-  "AQI": 50,
-  "Humidity": "67",
-  "Lat": 16.856831,
-  "Lon": 96.146523,
-  "PM10_0": "40.58",
-  "PM1_0": "22.92",
-  "PM2_5": "33.54",
-  "Pressure": "1011.2",
-  "Temperature": "91"
-},
-]
+import GraphGallery from './InnerComponents/GraphGallery/GraphGallery'
+
+import Map from './InnerComponents/map/map'
+
+
+
+
+
+// import {airDataContext,airDataDispatchContext} from './AirDataProvider'
+
+
 
 
 const SlideShow = ()=>{
 
+  const [airData,setAirData] = useState([]);
 
-    return (
+  const [aqyHistory,setAqyHistory] = useState([]);
+
+  useEffect(function(){
+      axios(
+        {
+          method:"GET",
+          url:"https://myanmarairpollution.herokuapp.com/api/v1/air",
+        }
+      ).then(result=>{console.log(result);setAirData(result.data)}).catch(err=>console.log(err));
+
+      // axios({
+      //   method:"GET",
+      //   url:"https://myanmarairpollution.herokuapp.com/api/v1/aqi_monthly"
+      // }).then(result=>{console.log(result);setAqyHistory(result.data)}).catch(err=>console.log(err))
+  },[])
+
+
+ 
+
+    return (<div>
+
+      <div className="home-header container">
+
+      {/* <div className="Map-Container">
+        {console.log(airData[0])}
+      <Map location={{lat:airData[0].Lat,lng:airData[0].Lon,address:airData[0].Label}} zoomLevel={14} />
+    </div> */}
+    <div className="row">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EbENZ16qL-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div className="general-stat">
+      <h4>General Statistics</h4>
+      <table>
+        <tr>
+        <th></th>
+        <th></th>
+        </tr>
+        <tr>
+          <td>Number of Sensors in Yangon: 12 </td>
+        </tr>
+        <tr><td>Number of Sensors in Mandalay: 2</td></tr>
+      </table>
+    </div>
+    </div>
+    </div>
+
+
     <div className="carousel">
+      
+        <GraphGallery aqyHistory={aqyHistory} />
+       
       <Carousel>
+       
 
-        {data.map(place=>( <Carousel.Item interval={5000}>
-          <WhiteCard location={place.location}  data={place} />
-
+        {airData.map(place=>( <Carousel.Item interval={5000}>
+          <WhiteCard location={place.Label}  data={place} key={place.ID} />
+        
+          
+         
+         
         <Carousel.Caption>
+      
         
      
     </Carousel.Caption>
@@ -89,7 +94,7 @@ const SlideShow = ()=>{
       
       </Carousel>
       
-      </div>)
+      </div></div>)
     
 }
 

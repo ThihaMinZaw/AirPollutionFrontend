@@ -1,0 +1,27 @@
+.LocationGraph{
+    
+
+    height:25em;
+    
+    width:100%;
+  
+    border-radius:10px;
+
+    margin-top:40px;
+
+    margin-bottom:150px;
+
+    @media(min-width:1170px){
+        width:100%;
+
+        margin-top:0px;
+
+    }
+}
+
+.graph-heading{
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-left:40px;
+    font-size:15px;
+}
