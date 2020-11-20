@@ -1,5 +1,17 @@
 @use 'bootstrap/scss/_carousel.scss';
 
+.video{
+    border-radius: 10px;
+    width: 40%;
+    height:230px;
+    margin:auto;
+}
+
+.first-row{
+    width:100%;
+    
+}
+
 .weather{
     
     h6{
@@ -18,7 +30,7 @@
     width:100%;
     // background-color: black;
     
-    padding:50px;
+   
     font-size:20px;
     // background-color: white;
     img{

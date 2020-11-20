@@ -289,8 +289,8 @@ const GraphsGallery = (props) => {
         </div>
 
         <div className="row image">
-            <img src="/ygn.png"></img>
-        </div>
+            <img src="/ygn.png"></img></div>
+       
 
 
 
