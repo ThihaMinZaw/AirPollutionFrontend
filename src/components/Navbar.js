@@ -14,7 +14,6 @@ const NavbarReact = ()=>{
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/analysis">Analysis</Nav.Link>
             <Nav.Link href="/predictions">Future Predictions</Nav.Link>
             <Nav.Link href="/references">References</Nav.Link>
            
