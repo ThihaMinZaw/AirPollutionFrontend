@@ -107,7 +107,7 @@ const SlideShow = ()=>{
   <div className="col-md-2 element"><h5 className="title">Description</h5><h6>{yangonWeatherData.Description} </h6></div>
   <div className="col-md-2 element"><h5 className="title">Weather</h5><h6>{yangonWeatherData.Weather}</h6></div>
   <div className="col-md-2 element"><h5 className="title">AQI</h5><h6>{mandalayWeatherData.AQI} </h6></div>
-  <div className="col-md-3 element"><h5 className="title">Covid Cases</h5><h6>{mandalayWeatherData.NEW}</h6></div>
+  {/* <div className="col-md-3 element"><h5 className="title">Covid Cases</h5><h6>{mandalayWeatherData.NEW}</h6></div> */}
       
       </div>
       <div className="row">
@@ -119,7 +119,7 @@ const SlideShow = ()=>{
   <div className="col-md-2 element"><h5 className="title">Description</h5><h6>{mandalayWeatherData.Description} </h6></div>
   <div className="col-md-2 element"><h5 className="title">Weather</h5><h6>{mandalayWeatherData.Weather}</h6></div>
   <div className="col-md-2 element"><h5 className="title">AQI</h5><h6>{mandalayWeatherData.AQI} </h6></div>
-  <div className="col-md-3 element"><h5 className="title">Covid Cases</h5><h6>{mandalayWeatherData.NEW}</h6></div>
+  {/* <div className="col-md-3 element"><h5 className="title">Covid Cases</h5><h6>{mandalayWeatherData.NEW}</h6></div> */}
       
       </div></div>
       
